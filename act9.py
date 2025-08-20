@@ -1,19 +1,37 @@
 ## 13/8/2025
 
-from typing import Self
 
+class Persona:
+    def hablar(self):
+        pass
+class Padre(Persona):
+    apellido=''
+    def __init__(self,nombre):
+        self.nombre=nombre
+    def __str__(self):
+        return self.nombre+" "+self.apellido
+    def hablar(self):
+        print("hola soy",self.nombre,self.apellido)
 
-class padre:
-    apellido= ''
-    def__init__(self,nombre):
-       Self.nombre=nombre 
-      
-class hijo(padre):
-    def __init__(self,nombre,lenguajeDeProgramacion):
+class Hijo(Padre):
+    def __init__(self,nombre,lenguajesDeProgramacion):
         super().__init__(nombre)
-        self.lenguajeDeProgramacion=lenguajeDeProgramacion 
-padre = padre('nombre del padre') 
-padre.apellido='apellido del padre'
-hijo = hijo('nombre del hijo','python')
-print(hijo,nombre,hijo,apellido)
+        self.lenguajesDeProgramacion=lenguajesDeProgramacion
+    def hablar(self):
+        print("hola soy",self.nombre,self.apellido,"y me gusta",self.lenguajesDeProgramacion)
+
+class Hija(Padre):
+    def __init__(self,nombre,artistaMusical):
+        super().__init__(nombre)
+        self.artistaMusical=artistaMusical
+    def hablar(self):
+        print("hola soy",self.nombre,self.apellido,"y me gusta",self.artistaMusical)
+
+padre = Padre('nombre del padre')
+Padre.apellido='apellido del padre'
+hijo = Hijo('nombre del hijo','python')
+hijo.hablar()
+hija = Hija('nombre del hija','nombre de banda')
+hija.hablar()
+
     
